@@ -3,9 +3,30 @@ import "./App.css";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contant";
+import PostDetails from "./PostDetails";
+import Posts from "./context/context";
+
+let post =[
+        {
+            id:1,
+            title:"Hello Post",
+            desc:"this is post title "
+        },
+        {
+            id:2,
+            title:"Hello duck",
+            desc:"this is post title "
+        },
+        {
+            id:3,
+            title:"Hello rubber",
+            desc:"this is post title "
+        },
+    ]
 
 function App() {
   return (
+    <Posts.Provider value={post}>
     <div className="w-7xl  bg-gray-50">
       <header className="bg-gradient-to-r from-yellow-400 to-amber-500 shadow-lg sticky top-0 z-50">
         <nav className="max-w-6xl mx-auto px-4 py-4">
@@ -37,6 +58,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+           <Route path="/postDetails/:postID" element={<PostDetails />} />
         </Routes>
       </main>
 
@@ -58,6 +80,7 @@ function App() {
         </div>
       </footer>
     </div>
+    </Posts.Provider>
   );
 }
 

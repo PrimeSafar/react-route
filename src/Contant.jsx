@@ -1,3 +1,4 @@
+import Post from "./Post";
 export default function Contact() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -68,6 +69,8 @@ export default function Contact() {
           Quack Hello! 🦆
         </button>
       </div>
+      <Post />
     </div>
+    
   );
 }
